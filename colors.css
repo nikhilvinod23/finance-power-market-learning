@@ -107,4 +107,7 @@ button.linklike { color: var(--blue); }
 #notice { background: var(--blue-dark); }
 .skip { background: var(--blue-dark); color: white; }
 mark { background: var(--amber-soft); }
+@media (max-width: 800px) {
+  nav { gap: 12px 16px; flex-wrap: wrap; overflow: visible; }
+}
 @media print { :root { color: black; } a, .topic-title, h1, h2, h3 { color: black; } }
