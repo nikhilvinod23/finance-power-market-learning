@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finance & Power Lesson Author"
+  short_description: "Keep finance and power lessons clear and consistent"
+  default_prompt: "Use $author-finance-power-lessons to add a sourced lesson with an example, glossary, and checked practice."

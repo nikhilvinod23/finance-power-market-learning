@@ -1,0 +1,8 @@
+.source/
+node_modules/
+.openai/
+dist/
+qa/
+*.zip
+.skill-checkout/
+assets/mit/
