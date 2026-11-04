@@ -34,3 +34,5 @@ L('stable-id','Clear title','module-id',['Finance','Math'],
 ## Semantic color palette
 
 Use the tokens in colors.css: blue for navigation, actions, and model curves; green for completed or understood items, correct answers, and positive cash flows; amber for review flags, caution, and variance forecasts; red for errors, losses, downward branches, and destructive actions. Use pale corresponding backgrounds for surfaces and retain neutral reading text. Keep labels and line styles so meaning never relies on color alone. Preserve this mapping in new controls and diagrams; do not add unrelated accent colors or gradients.
+
+When changing a published stylesheet, increment its version query in index.html so browser caches do not hide visual updates.
