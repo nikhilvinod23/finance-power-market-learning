@@ -11,6 +11,6 @@ Follow the existing L/num/mc schema in content/. Read the actual source and reco
 
 Treat source adaptations and new power or coding applications separately. Verify current market rules from primary documentation. Distinguish physical forecasts from pricing measures, variance from standard deviation, and perfect foresight from implementable policies. Never claim comprehensive CFA preparation from this MIT course.
 
-Keep the interface monochrome and reading-first. Avoid gradients, animated icons, and decorative microheadings. Use precise SVG diagrams and meaningful controls with labeled assumptions. Preserve stable lesson IDs, passage and question indices, and browser-progress compatibility. Do not commit personal notes, progress, credentials, or private textbooks.
+Keep the interface reading-first with a restrained semantic palette. Avoid gradients, animated icons, and decorative microheadings. Use precise SVG diagrams and meaningful controls with labeled assumptions. Preserve stable lesson IDs, passage and question indices, and browser-progress compatibility. Do not commit personal notes, progress, credentials, or private textbooks.
 
 Run npm test and npm run build. Validate numerical examples against independent analytical cases. Check glossary destinations, question explanations, source links, import/export, and review flags. Inspect desktop and mobile when browser access is available and report any verification limit.

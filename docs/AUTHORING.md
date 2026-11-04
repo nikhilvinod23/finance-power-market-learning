@@ -10,7 +10,7 @@ Use this workflow when adding or editing finance, trading, math, programming, CF
 6. Add glossary definitions and accurate links to teaching passages. Tag across relevant fields; distinguish material actually covered from future roadmap entries. Do not label MIT lessons as complete CFA preparation.
 7. Preserve stored progress: never reuse lesson IDs, reorder existing passage indices, or reorder existing question indices without an explicit migration. Store only user progress in the browser; content remains public and generic. Never infer mastery from a page visit or a single correct answer.
 8. For diagrams and interactives, identify all inputs and outputs, show units and assumptions, use deterministic seeds where useful, and describe exactly what is simulated. Validate numerical routines independently with analytical cases or exhaustive enumeration. Never represent perfect foresight as tradable performance.
-9. Keep a reading-first monochrome UI, accessible controls, visible focus, responsive layout, and no gradients, animated icons, decorative microheadings, or unnecessary dashboards. Use SVG for exact diagrams; generated images are inappropriate for exact mathematical claims.
+9. Keep a reading-first UI with a restrained semantic palette, accessible controls, visible focus, responsive layout, and no gradients, animated icons, decorative microheadings, or unnecessary dashboards. Use SVG for exact diagrams; generated images are inappropriate for exact mathematical claims.
 10. Run curriculum, numerical, and state tests; build; inspect desktop and mobile when browser access is available. Check searches, glossary links, question feedback, persistence, export/import, review flags, direct URLs, and no unintended horizontal overflow.
 
 ## Example schema
@@ -30,3 +30,7 @@ L('stable-id','Clear title','module-id',['Finance','Math'],
 ```
 
 `L`, `num`, and `mc` are provided by `AUTHOR`. Load additional content files before `app.js`; include them in curriculum validation. Use `.reference` for independent source references and update the renderer when adding a new reference type. Keep user-controlled text escaped, including imported notes. Keep import records whitelisted and size-limited.
+
+## Semantic color palette
+
+Use the tokens in colors.css: blue for navigation, actions, and model curves; green for completed or understood items, correct answers, and positive cash flows; amber for review flags, caution, and variance forecasts; red for errors, losses, downward branches, and destructive actions. Use pale corresponding backgrounds for surfaces and retain neutral reading text. Keep labels and line styles so meaning never relies on color alone. Preserve this mapping in new controls and diagrams; do not add unrelated accent colors or gradients.

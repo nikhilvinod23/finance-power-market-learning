@@ -1,6 +1,14 @@
 # Finance & Power Market Learning
 
-A quiet, black-and-white study site built around MIT 15.450 Analytics of Finance (Fall 2010), taught by Leonid Kogan. Independent from Power Market Game.
+A quiet study site with a consistent semantic color palette built around MIT 15.450 Analytics of Finance (Fall 2010), taught by Leonid Kogan. Independent from Power Market Game.
+
+## Published site
+
+https://nikhilvinod23.github.io/finance-power-market-learning/
+
+GitHub Pages publishes the `main` branch from the repository root. The `.nojekyll` marker serves these static files without Jekyll processing. Push changes to `main` to update the site; no dependency installation or framework build is required for this publishing method. Browser progress remains device-local; use export/import to transfer it.
+
+Colors have consistent meanings: blue for actions and navigation, green for completion and positive results, amber for review and caution, and red for losses, errors, or reset actions. Labels preserve the meaning without relying on color alone.
 
 ## Included
 
