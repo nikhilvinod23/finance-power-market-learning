@@ -25,7 +25,7 @@ function L(id,title,module,tags,summary,sections,example,deeper,pitfall,question
 }
 L('algebra','Algebra, sums, and financial notation','foundations',['Math'],
  'Translate the symbols before trying to solve the problem.',[
- ['Read a formula as a sentence','A subscript labels an observation or time: Pₜ is the price at time t; Pₜ₊₁ is the next price. A superscript can mean a power, as in x², but a prime (′) means transpose in this course. A hat, θ̂, means an estimate made from data. Greek letters are names for quantities, not new operations.'],
+ ['Read a formula as a sentence','A subscript labels an observation or time: Pₜ is the price at time t; Pₜ₊₁ is the next price. A superscript can mean a power, as in x², A prime (′) denotes transpose on vectors and matrices here; on a scalar function such as f′ it denotes a derivative. A hat, θ̂, means an estimate made from data. Greek letters are names for quantities, not new operations.'],
  ['Sums and products','Σ means add the listed terms. Σᵢ wᵢrᵢ is a weighted sum: multiply each return by its portfolio weight and add. Π means multiply. Compounding uses a product because each period changes the base on which the next return is earned.'],
  ['Solve and check units','Rearrange both sides of an equality with the same operation. If revenue = price × energy, then energy = revenue / price. Dollars divided by dollars per MWh gives MWh. Dimensional checks often catch errors before a numerical test does.']
  ],'A portfolio holds 60% in an asset returning 10% and 40% in one returning −5%. Its simple return is 0.6 × 0.10 + 0.4 × (−0.05) = 0.04, or 4%.',
@@ -104,7 +104,7 @@ L('time-series','Time series, beta, and information timing','foundations',['Math
  'A timestamp is part of the observation.',[
  ['Levels, changes, and lags','A time series is an ordered sequence. A lag is a past observation: xₜ₋₁ means the previous period. Price levels can drift without a stable mean; returns or differences may behave more stably. Regressing unrelated trending levels can produce misleading relationships.'],
  ['Beta is not a delay','Contemporaneous market beta is Cov(rᵢ, rₘ)/Var(rₘ), computed using aligned returns over the same intervals. It measures co-movement, not a rule telling an asset to move after the market. To study delays, specify lagged market returns separately and account for asynchronous timestamps.'],
- ['Autoregression','An AR(1) model is xₜ₊₁ = a + ρxₜ + εₜ₊₁. If |ρ| < 1, its stationary mean is a/(1−ρ). A conditional forecast uses today’s xₜ, while the shock εₜ₊₁ represents tomorrow’s unpredicted part.']
+ ['Autoregression','An AR(1) model is xₜ₊₁ = a + ρxₜ + εₜ₊₁. With suitable stationary zero-mean innovations and |ρ| < 1, its stationary mean is a/(1−ρ). A conditional forecast uses today’s xₜ, while the shock εₜ₊₁ represents tomorrow’s unpredicted part.']
  ],'If a = 2, ρ = 0.8, and today’s x is 15, tomorrow’s conditional mean is 2 + 0.8 × 15 = 14. The long-run mean is 2/(1−0.8) = 10. The forecast moves partway back toward 10.',
  'A research signal must use the information available at the decision time. Align publication time, timezone, delivery interval, and later revisions. A day-ahead forecast cannot use realized load or prices from its delivery day. This is a data-design constraint, not a detail to repair after a backtest.',
  'High beta does not imply a predictable delayed reaction. Observed lead–lag can come from stale prices or mismatched trading hours.',

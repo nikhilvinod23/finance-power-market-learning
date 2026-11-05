@@ -111,3 +111,13 @@ mark { background: var(--amber-soft); }
   nav { gap: 12px 16px; flex-wrap: wrap; overflow: visible; }
 }
 @media print { :root { color: black; } a, .topic-title, h1, h2, h3 { color: black; } }
+/* Reading references and portable review evidence use the same semantic palette. */
+.citations{font-size:.875rem;line-height:1.6;color:var(--muted,#59616c);margin:14px 0 20px;overflow-wrap:anywhere}
+.citations a{font-weight:600}
+.example-origin{font-size:.875rem;color:var(--muted,#59616c)}
+.evidence{border:1px solid #c8d9ec;border-left:4px solid #245d9f;border-radius:8px;padding:18px 22px;margin:24px 0;background:#f5f9fd}
+.evidence h2{font-size:1.15rem;margin:0 0 12px}
+.evidence p{margin:8px 0}
+.review-preview{margin:12px 0;border:1px solid #ccd5df;border-radius:6px;padding:12px;overflow-wrap:anywhere}
+.review-preview summary{cursor:pointer;font-weight:600}
+.buttons{flex-wrap:wrap}

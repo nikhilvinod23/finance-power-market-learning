@@ -36,3 +36,9 @@ L('stable-id','Clear title','module-id',['Finance','Math'],
 Use the tokens in colors.css: blue for navigation, actions, and model curves; green for completed or understood items, correct answers, and positive cash flows; amber for review flags, caution, and variance forecasts; red for errors, losses, downward branches, and destructive actions. Use pale corresponding backgrounds for surfaces and retain neutral reading text. Keep labels and line styles so meaning never relies on color alone. Preserve this mapping in new controls and diagrams; do not add unrelated accent colors or gradients.
 
 When changing a published stylesheet, increment its version query in index.html so browser caches do not hide visual updates.
+
+## Reference and review-record contract
+
+New practical lessons can use `AUTHOR.N` after practical.js, with citation IDs defined in references.js. Every lesson and explanatory passage must resolve to primary/textbook references with a useful locator; label original worked examples. Load references.js after all content and resources. Preserve citation metadata in exports.
+
+Self-reported status and external review evidence are separate. Never infer mastery from completion. Preserve event IDs, original answers, assistance, version, and timestamps; validate before preview and user confirmation. No private learning record belongs in the public repository. Keep account, sync, and scheduler claims aligned with what is actually connected.

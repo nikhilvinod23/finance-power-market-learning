@@ -12,14 +12,16 @@ Colors have consistent meanings: blue for actions and navigation, green for comp
 
 ## Included
 
-- 45 plain-language lessons spanning prerequisites, all ten lecture decks, both reviews, programming, and introductory energy applications.
-- 90 quick questions with explanations and a review queue for missed questions.
+- 75 plain-language lessons spanning prerequisites, all ten lecture decks, both reviews, programming, and introductory energy applications.
+- 150 quick questions with explanations and a review queue for missed questions.
 - Seven interactive examples: discounting, diversification, binomial pricing, Brownian scaling, Monte Carlo, GARCH, and battery dispatch.
 - Searchable lessons, field filters, glossary definitions linked to teaching passages, and prerequisite navigation.
 - Separate reading and understanding flags; passage-level review; notes; JSON progress export/import.
+- Nine practical tracks covering Excel, market data, power markets, forecasting, hedging, project finance, risk, algorithms, and selected CFA foundations.
+- Sources throughout the lessons; ChatGPT review-pack export, confirmed review-result imports, and Obsidian notebook snapshots.
 - Original course resources linked in Sources. No private textbooks, accounts, credentials, tracking, or external fonts.
 
-Content is a concise adaptation of the major ideas, not a replacement for every original derivation. The full CFA Level I curriculum and comprehensive power-market coverage are future extensions, explicitly identified in the site.
+Content is a concise adaptation of the major ideas, not a replacement for every original derivation. Selected CFA foundations and broader power applications are included; full CFA exam coverage and comprehensive operational rules are outside the current scope.
 
 ## Run
 
@@ -40,7 +42,9 @@ Build output is `dist/`. Any static host can serve it without a backend. `index.
 
 ## Progress
 
-Progress is stored in localStorage under `finance-power-learning:v1`. A new browser begins with algebra and probability understood; the rest are unstarted. These initial flags are a convenience, not personal information stored in this repository. A hosted URL and localhost have separate storage. Export/import moves progress between them. Imported lesson records replace matching records; untouched lessons are preserved. Notes never leave the browser unless exported or copied by the user.
+Progress is stored in localStorage under `finance-power-learning:v1`. A new browser begins with algebra and probability understood; the rest are unstarted. These initial flags are a convenience, not personal information stored in this repository. A hosted URL and localhost have separate storage. Export/import moves progress between them. Imported lesson records replace matching records; untouched lessons are preserved. Notes never leave the browser unless exported or copied by the user. Version-1 records now optionally include append-only confirmed review events; old backups remain readable.
+
+See [integration design and usage](docs/LEARNING_INTEGRATION.md) and [content review](docs/CONTENT_REVIEW.md). No account, vault, device sync, or recurring task is connected.
 
 ## Extend
 

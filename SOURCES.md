@@ -32,6 +32,14 @@ All ten lecture PDFs, two review PDFs, four handouts, eight recitations, six ass
 
 - Python Software Foundation tutorial: https://docs.python.org/3/tutorial/ (programming prerequisites; original prose and code examples here).
 - ERCOT Day-Ahead Market: https://www.ercot.com/mktinfo/dam (market description checked November 4, 2026).
-- CFA Institute Level I: https://www.cfainstitute.org/programs/cfa-program/candidate-resources/level-i-exam (roadmap reference, not a claim of complete exam coverage).
+- CFA Institute Level I: https://www.cfainstitute.org/programs/cfa-program/candidate-resources/level-i-exam (official scope reference for selected foundations, not a claim of complete exam coverage).
 
 Power, project-finance, coding, multiple-testing, and research-workflow connections are original extensions. Energy settlement, spark-spread, and battery examples explicitly omit real-world details to isolate the learning objective. They are not current operational instructions or trading recommendations. The application does not execute Python, send notes to a chatbot, or connect a brokerage.
+
+## Expanded references and review
+
+All 75 lessons have in-passage reference links and source notes. `content/references.js` records source titles, publishers, locators, rights context, and the review date. The Sources page renders that registry with links back to related lessons. New topics use original explanatory prose, examples, and questions; linked publishers retain their rights.
+
+Additional references include OpenStax finance/economics/statistics/calculus, Microsoft Excel, Python/NumPy/pandas/PostgreSQL, scikit-learn, SciPy, Hyndman and Athanasopoulos’s Forecasting: Principles and Practice, CFTC, CME, ERCOT training/current protocols, SAM financial models, BIS risk terminology, and CFA Institute’s official Code/Standards and Level I outline. See the registry for exact URLs and chapter/section guidance.
+
+See [content review](docs/CONTENT_REVIEW.md) for corrections, validation scope, and limitations. See [integration plan](docs/LEARNING_INTEGRATION.md) for the separate OpenAI and Obsidian primary references.
