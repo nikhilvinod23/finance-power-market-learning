@@ -53,3 +53,9 @@ See `AGENTS.md` and `docs/AUTHORING.md`. Preserve lesson IDs, passage indices, a
 ## Attribution
 
 See [SOURCES.md](SOURCES.md). Educational adaptations are CC BY-NC-SA 4.0; original application code is MIT licensed. MIT OCW and separately credited third-party materials retain their terms. This project is not endorsed by MIT or CFA Institute.
+
+## Deeper teaching and flashcards
+
+All 225 main passages now include expanded reasoning and connections. Six new interactive mechanisms and five static diagram types supplement the original seven widgets, with selected mechanisms reused across related lessons. Compact clickable source boxes preserve reference detail while reducing visual bulk. Reading and understanding controls appear at both ends of each lesson.
+
+Flashcards test understood topics using 168 calculation, recognition, and causal-reasoning cards. Recency-weighted evidence and review weights are private browser state, separate from self-reported completion. See [teaching and practice design](docs/TEACHING_AND_PRACTICE.md) for implementation, assumptions, and limits.

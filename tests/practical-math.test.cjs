@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-for(const f of ['curriculum','course','inference','applications','practical','markets','professional'])require('../content/'+f+'.js');
+for(const f of ['curriculum','course','inference','applications','practical','markets','professional','depth-foundations','depth-course','depth-practical','depth-markets','reasoning-cards'])require('../content/'+f+'.js');
 const byId=new Map(CURRICULUM.lessons.map(l=>[l.id,l]));
 // Independently compute the numeric practice answers from the stated inputs.
 const cases=[

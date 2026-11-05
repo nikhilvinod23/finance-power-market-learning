@@ -38,3 +38,9 @@ These checks do not establish that every conceptual passage is beyond dispute or
 - An LLM score can be wrong. Confirmed imported reviews remain provisional evidence and do not silently overwrite self-reported understanding.
 - Browser progress is device-local until transferred; exports are snapshots. No Plus account, Obsidian vault, sync service, or schedule is connected.
 - No paid textbooks, private notes, personal learning records, credentials, or source PDFs are committed.
+
+## November 5, 2026 teaching revision
+
+All 225 main passages were expanded in place with causal explanation, reasoning steps, applications, and conceptual connections. The calculus treatment now develops gradients, Hessians, mixed derivatives, quadratic corrections, and directional curvature with original examples. Additional primary references are OpenStax Calculus Volume 3 and MIT 18.S096 Matrix Calculus (2023). Source links are compact popovers; the full scope note follows navigation. Top/bottom progress controls share one state.
+
+The new flashcard bank contains 168 cards, with recognition evidence kept separate from completion. Tests cover eligibility, retries, hints, recency weights, import/merge, synchronized controls, source/footer structure, and independent Taylor/Hessian/dispatch cases. See TEACHING_AND_PRACTICE.md for the model assumptions and limitations. Expanded prose is an original teaching synthesis, not additional MIT source pages or full exam coverage.

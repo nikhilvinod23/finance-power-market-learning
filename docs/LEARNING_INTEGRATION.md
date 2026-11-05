@@ -107,3 +107,7 @@ Do not put private progress in this public repository, a public Gist, a Pages JS
 - [How Obsidian stores data](https://obsidian.md/help/data-storage)
 
 Before implementing live sync, decide the actual vault location, mobile sync method, canonical private store, supported agent runtime/model authentication, and review cadence/time zone. No vault location or credentials should be guessed.
+
+## Flashcard evidence (November 5 revision)
+
+Version-1 progress can now include a flashcards event array. These events remain distinct from externally confirmed reviews. Notebook JSON snapshots preserve them, and review packs include topic-level recognition evidence when the flashcard module is available. See TEACHING_AND_PRACTICE.md for weighting and assistance rules. A multiple-choice success must not be treated as demonstrated ability to implement an algorithm.

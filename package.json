@@ -6,6 +6,6 @@
   "scripts": {
     "start": "node scripts/preview.cjs",
     "build": "node scripts/build.cjs",
-    "test": "node tests/curriculum.test.cjs && node tests/models.test.cjs && node tests/ui-state.test.cjs && node tests/practical-math.test.cjs && node tests/learning-record.test.cjs"
+    "test": "node tests/curriculum.test.cjs && node tests/models.test.cjs && node tests/ui-state.test.cjs && node tests/practical-math.test.cjs && node tests/learning-record.test.cjs && node tests/flashcards.test.cjs && node tests/visuals.test.cjs"
   }
 }

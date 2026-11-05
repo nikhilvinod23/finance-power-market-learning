@@ -1,0 +1,20 @@
+(function(root){'use strict';const DAY=86400000;
+function bank(lessons){return lessons.flatMap(l=>l.questions.map((q,i)=>{let options,answer;if(q.type==='mc'){options=q.options.slice();answer=q.answer;}else{const a=q.answer,values=[a,a===0?1:a*.5,a===0?-1:a*1.5,a+Math.max(1,Math.abs(a)*.2)];const unique=[];for(const v of values){const x=Number(v.toPrecision(8));if(!unique.includes(x))unique.push(x);}for(let n=1;unique.length<4;n++)if(!unique.includes(a+n))unique.push(a+n);options=unique.map(x=>String(x)+(q.unit?' '+q.unit:''));answer=0;}return {id:l.id+':q'+i,lessonId:l.id,prompt:q.prompt,options,answer,explanation:q.explanation};})).concat((root.CURRICULUM?.reasoningCards||[]).filter(c=>lessons.some(l=>l.id===c.lessonId)));}
+function validate(raw,cards,now=Date.now()){if(raw==null)return [];if(!Array.isArray(raw)||raw.length>10000)throw Error('Flashcard history must contain at most 10,000 attempts.');const ids=new Set(cards.map(c=>c.id)),seen=new Set();return raw.map(v=>{const t=Date.parse(v?.answeredAt);if(!v||!ids.has(v.cardId)||typeof v.id!=='string'||!/^f-[a-zA-Z0-9_-]{3,100}$/.test(v.id)||seen.has(v.id)||!Number.isFinite(t)||t<946684800000||t>now+300000||typeof v.correct!=='boolean'||typeof v.hint!=='boolean'||typeof v.answer!=='string'||v.answer.length>500||typeof v.contentVersion!=='string'||v.contentVersion.length>80)throw Error('Invalid flashcard attempt.');seen.add(v.id);return {id:v.id,cardId:v.cardId,answeredAt:new Date(t).toISOString(),correct:v.correct,hint:v.hint,answer:v.answer,contentVersion:v.contentVersion};});}
+function merge(a,b){const m=new Map(a.map(e=>[e.id,e]));for(const e of b){if(m.has(e.id)&&JSON.stringify(m.get(e.id))!==JSON.stringify(e))throw Error('Conflicting flashcard attempt ID.');m.set(e.id,e);}if(m.size>10000)throw Error('Flashcard history is full. Export before archiving attempts.');return [...m.values()].sort((x,y)=>x.answeredAt.localeCompare(y.answeredAt)||x.id.localeCompare(y.id));}
+// Only first attempt per card per UTC day influences weights: immediate retry is practice, not fresh evidence.
+function evidence(events,cards,lessonId,now=Date.now()){
+ const allowed=new Set(cards.filter(c=>c.lessonId===lessonId).map(c=>c.id)),all=events.filter(e=>allowed.has(e.cardId)).sort((a,b)=>a.answeredAt.localeCompare(b.answeredAt)||a.id.localeCompare(b.id)),seen=new Set(),first=[];
+ for(const e of all){const key=e.cardId+'|'+e.answeredAt.slice(0,10);if(!seen.has(key)){seen.add(key);first.push(e);}}
+ let good=0,total=0;for(const e of first){const w=Math.pow(.5,Math.max(0,now-Date.parse(e.answeredAt))/(30*DAY));total+=w;if(e.correct&&!e.hint)good+=w;}
+ const estimate=first.length?(1+good)/(2+total):null;
+ return {attempts:all.length,evidenceAttempts:first.length,distinctCards:new Set(first.map(e=>e.cardId)).size,estimate,weight:estimate==null?1:1-estimate,last:all.at(-1)?.answeredAt||null,needsReview:first.length>=2&&estimate<.5};
+}
+function queue(state,cards,count=10,now=Date.now(),topic=''){
+ const eligible=cards.filter(c=>state.lessons[c.lessonId]?.status==='understood'&&(!topic||c.lessonId===topic)),events=state.flashcards||[];
+ const ranked=eligible.map(c=>{const e=events.filter(e=>e.cardId===c.id).sort((a,b)=>a.answeredAt.localeCompare(b.answeredAt)),last=e.at(-1),s=evidence(events,cards,c.lessonId,now);const age=last?Math.max(0,now-Date.parse(last.answeredAt))/DAY:1e5;return {c,priority:last?Math.min(age,60)+s.weight*20+(last.correct&&!last.hint?0:10):1000};}).sort((a,b)=>b.priority-a.priority||a.c.id.localeCompare(b.c.id));
+ // Round-robin across topics after prioritizing each topic's cards.
+ const buckets=new Map();for(const x of ranked){if(!buckets.has(x.c.lessonId))buckets.set(x.c.lessonId,[]);buckets.get(x.c.lessonId).push(x.c);}const out=[];while(out.length<count&&[...buckets.values()].some(b=>b.length))for(const b of buckets.values()){if(out.length<count&&b.length)out.push(b.shift());}return out;
+}
+root.FLASH={bank,validate,merge,evidence,queue};if(typeof module!=='undefined')module.exports=root.FLASH;
+})(typeof window!=='undefined'?window:globalThis);

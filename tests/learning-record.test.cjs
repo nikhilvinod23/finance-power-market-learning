@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-for(const f of ['curriculum','course','inference','applications','practical','markets','professional','deep-dives','resources','references'])require('../content/'+f+'.js');
+for(const f of ['curriculum','course','inference','applications','practical','markets','professional','deep-dives','depth-foundations','depth-course','depth-practical','depth-markets','reasoning-cards','resources','references'])require('../content/'+f+'.js');
 const R=require('../learning-record.js'),C=CURRICULUM,now=Date.parse('2026-11-04T18:00:00Z'),day=86400000;
 const event=(id,date,extra={})=>({id,lessonId:'time-value',reviewedAt:new Date(date).toISOString(),score:1,assistance:'none',reviewer:'chatgpt',question:'Question '+id,answer:'Original answer <script>not executable</script>',feedback:'Explain and check units.',contentVersion:C.contentVersion,...extra});
 const first=event('r-first',now-8*day),second=event('r-second',now-day),state={version:1,lessons:{'time-value':{status:'understood',read:true,notes:'PRIVATE-NOTE'}},last:'time-value',reviews:[first,second]};

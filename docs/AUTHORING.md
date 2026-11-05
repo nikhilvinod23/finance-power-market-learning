@@ -42,3 +42,7 @@ When changing a published stylesheet, increment its version query in index.html 
 New practical lessons can use `AUTHOR.N` after practical.js, with citation IDs defined in references.js. Every lesson and explanatory passage must resolve to primary/textbook references with a useful locator; label original worked examples. Load references.js after all content and resources. Preserve citation metadata in exports.
 
 Self-reported status and external review evidence are separate. Never infer mastery from completion. Preserve event IDs, original answers, assistance, version, and timestamps; validate before preview and user confirmation. No private learning record belongs in the public repository. Keep account, sync, and scheduler claims aligned with what is actually connected.
+
+## Teach the mechanism
+
+Follow docs/TEACHING_AND_PRACTICE.md. Main passages must develop how and why a concept works, walk through reasoning, define unfamiliar objects before using them, and connect to other topics and applications. Do not substitute longer dictionary entries for teaching. Keep saved passage indices stable. Place compact citation popovers near relevant teaching areas and the full source/scope note after lesson navigation. Keep top/bottom progress controls synchronized. Flashcard evidence must remain separate from completion claims and external assessments.
